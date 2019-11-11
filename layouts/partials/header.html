@@ -1,0 +1,20 @@
+<!-- Wrapper -->
+<div class="wrapper"> 
+    <div class="inner">
+        <!-- Header -->
+        <header id="header">
+            <a id="logo" href="{{ "/" | relURL }}" class="logo">{{ .Site.Title }}</a>
+            <nav>
+                <ul>
+                    <li><a href="#menu">Menu</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        {{ partial "menu.html" . }}
+        
+        {{ if eq .Params.layout "home" }}
+            {{ partial "banner.html" . }}
+        {{ end }}
+    </div>
+</div>

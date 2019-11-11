@@ -1,0 +1,16 @@
+<!-- Section -->
+<section id="carousel" class="carousel {{ .section.background_accent_color }}">
+    {{ range $page := (where (where (where ((.Site.GetPage "section" "/").Pages) "Params.home_sections" "!=" nil) "Params.home_sections.carousel" "!=" nil) "Params.home_sections.carousel.enabled" true).ByParam "home_sections.carousel.weight" }}
+        <article>
+            <div class="image"><img src="{{ $page.Params.home_sections.carousel.image.url | relURL }}" alt="" data-position="{{ $page.Params.home_sections.carousel.image.data_position }}" /></div>
+            <div class="content">
+                <a href="{{ $page.URL }}"><h3>{{ $page.Params.home_sections.carousel.title }}</h3></a>
+                {{ partial "markdownify-block" $page.Params.home_sections.carousel.subtitle }}
+            </div>
+        </article>
+    {{ end }}
+    <nav>
+        <a href="#" class="previous"><span class="label">Previous</span></a>
+        <a href="#" class="next"><span class="label">Next</span></a>
+    </nav>
+</section>

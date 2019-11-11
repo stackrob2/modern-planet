@@ -1,0 +1,11 @@
+<!-- Section -->
+<section class="main accent2">
+    <header class="major">
+        <h2>{{ .Site.Data.footer.contact.title }}</h2>
+        {{ partial "markdownify-block" .Site.Data.footer.contact.subtitle }}
+    </header>
+    <form method="post" action="#" class="combined">
+        <input type="email" name="email" id="email" placeholder="Email address" class="invert" />
+        <input type="submit" class="primary" value="Sign Up" />
+    </form>
+</section>

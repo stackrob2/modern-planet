@@ -1,0 +1,13 @@
+{{ define "content" }}
+
+    <!-- Wrapper -->
+    <div class="wrapper">
+        <div class="inner">
+            {{ range $section := .Params.sections }}
+                {{ $include_dict := dict "section" $section "Site" $.Site }}
+                {{ partial $section.component $include_dict }}
+            {{ end }}
+        </div>
+    </div>
+
+{{ end }}

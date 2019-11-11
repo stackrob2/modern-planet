@@ -1,0 +1,23 @@
+<!-- Banner -->
+<section id="banner">
+    <div class="items">
+        {{ range $item := .Params.banner.items }}
+            <section class="{{ $item.accent_color }}">
+                <h1>{{ $item.title }}</h1>
+                {{ partial "markdownify-block" $item.subtitle }}
+                {{ if $item.action }}
+                    <ul class="actions special">
+                        <li><a href="{{ if strings.HasPrefix $item.action.url "#" }}{{ $item.action.url }}{{ else }}{{ relref $ $item.action.url | relURL }}{{ end }}" class="button{{ if $item.action.is_primary }} primary{{ end }}{{ if $item.action.is_scrolly }} scrolly{{ end }}">{{ $item.action.label }}</a></li>
+                    </ul>
+                {{ end }}
+            </section>
+        {{ end }}
+    </div>
+    <div class="slider">
+        {{ range $slide := .Params.banner.slider }}
+            <article>
+                <img src="{{ $slide.img_path | relURL }}" alt="" data-position="{{ $slide.data_position }}" />
+            </article>
+        {{ end }}
+    </div>
+</section>

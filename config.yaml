@@ -1,0 +1,19 @@
+title: Altitude
+baseURL: /
+params:
+  palette: cyan
+  palettes:
+    cyan:
+      sass:
+        accent2: '#4cabb1'
+        accent3: '#69c7ad'
+        accent4: '#fed586'
+    purple:
+      sass:
+        accent2: '#656dba'
+        accent3: '#7183cd'
+        accent4: '#eb8585'
+disableKinds:
+  - RSS
+  - taxonomy
+  - taxonomyTerm
